@@ -1,0 +1,149 @@
+{
+  "schema": "venture-3d-handoff",
+  "schemaVersion": "1.0.0",
+  "generator": "Venture 3D Studio 1.0.0",
+  "projectName": "Travel Jewelry Organizer: Mission 2",
+  "modelName": "Travel Jewelry Organizer",
+  "modelType": "Physical product",
+  "description": "A compact fold-out leather organizer that keeps necklaces separated, protects rings and earrings, and packs flat for travel.",
+  "origin": "Starting model built by Codex from the Mission 1 concept images (front, side, back and open views) using editable parametric parts. The browser does not reconstruct 3D from images automatically.",
+  "confirmedAt": "2026-11-03T03:58:36.680Z",
+  "confirmationVersion": 1,
+  "units": {
+    "model": "meters",
+    "display": "centimeters",
+    "upAxis": "Y",
+    "forwardAxis": "+Z"
+  },
+  "dimensions": {
+    "measured": {
+      "width": 29.55,
+      "height": 3.36,
+      "depth": 21,
+      "units": "cm"
+    },
+    "studentEstimate": {
+      "width": 25,
+      "height": 2.4,
+      "depth": 21,
+      "units": "cm"
+    }
+  },
+  "camera": {
+    "preset": "isometric",
+    "type": "perspective",
+    "fov": 35,
+    "position": [
+      0.31099,
+      0.26096,
+      0.35905
+    ],
+    "target": [
+      0.02375,
+      0.0168,
+      0
+    ]
+  },
+  "scene": {
+    "background": "#e6dfd5",
+    "lighting": "studio",
+    "environmentIntensity": 0.45,
+    "shadows": true
+  },
+  "hotspots": [
+    {
+      "id": "jo1",
+      "name": "Spine",
+      "description": "Flexible spine folds the organizer flat for packing.",
+      "position": [
+        0,
+        0.0045,
+        0
+      ]
+    },
+    {
+      "id": "jo7",
+      "name": "Necklace bar",
+      "description": "Necklace bar with individual hooks: each chain hangs separately so it cannot tangle.",
+      "position": [
+        -0.064,
+        0.01748,
+        -0.084
+      ]
+    },
+    {
+      "id": "jo13",
+      "name": "Clear necklace pockets",
+      "description": "Clear vinyl pockets keep long necklaces apart and visible.",
+      "position": [
+        -0.064,
+        0.01565,
+        0.0467
+      ]
+    },
+    {
+      "id": "jo1m",
+      "name": "Earring pad",
+      "description": "Padded earring panel holds studs and hoops in matched pairs.",
+      "position": [
+        0.064,
+        0.01842,
+        -0.064
+      ]
+    },
+    {
+      "id": "jo2b",
+      "name": "Ring roll",
+      "description": "Velvet ring roll: rings slide on and stay put.",
+      "position": [
+        0.064,
+        0.0222,
+        -0.006
+      ]
+    },
+    {
+      "id": "jo2k",
+      "name": "Zip storage page",
+      "description": "Separate zip storage page with room for bulky or odd-sized pieces.",
+      "position": [
+        0.064,
+        0.01495,
+        0.055
+      ]
+    },
+    {
+      "id": "jo2r",
+      "name": "Snap closure",
+      "description": "Enlarged, reinforced snap closure (25% larger) to be tested through repeated use, because faulty snaps were the top defect in 80 Amazon reviews.",
+      "position": [
+        0.15275,
+        0.00395,
+        0.00625
+      ]
+    }
+  ],
+  "files": {
+    "model": "model.glb",
+    "project": "project.json",
+    "preview": "preview.png",
+    "readme": "README.txt"
+  },
+  "integrity": {
+    "model": {
+      "sha256": "9feea18b6784b192a1302836bd03b900b5478f4b74725bd59605cc62fc9aad84",
+      "bytes": 1978528
+    },
+    "preview": {
+      "sha256": "dfa4f722ba7bb5e080651aa8dffbee04ec25cf5c1f967bf08deba4a0b0f19db0",
+      "bytes": 417662
+    }
+  },
+  "stats": {
+    "meshes": 88,
+    "triangles": 78482,
+    "materials": 14,
+    "textures": 0,
+    "validatedMeshes": 88,
+    "validatedTextures": 0
+  }
+}

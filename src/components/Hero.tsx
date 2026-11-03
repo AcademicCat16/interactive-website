@@ -1,17 +1,23 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { brand } from '../data/venture'
 import HeroScene from './HeroScene'
+import HeroProduct from './product3d/HeroProduct'
 
 export default function Hero() {
   const reduce = useReducedMotion()
   const rise = (delay: number, y = 16) => ({ initial: reduce ? false : { opacity: 0, y }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8, delay, ease: 'easeOut' as const } })
   return (
-    <section id="top" className="relative w-full h-[100svh] min-h-[620px] overflow-hidden">
-      <div className="absolute inset-0 max-md:opacity-40 md:left-[18%]"><HeroScene /></div>
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 25%, transparent 55%, rgba(11,10,9,0.95) 100%)' }} />
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(8,20,20,0.92) 0%, rgba(8,20,20,0.55) 32%, transparent 58%)' }} />
+    <section id="top" className="relative flex flex-col md:block w-full min-h-[100svh] md:h-[100svh] md:min-h-[620px] overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none max-md:opacity-45 md:left-[18%]"><HeroScene atmosphereOnly /></div>
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 25%, transparent 62%, rgba(11,10,9,0.95) 100%)' }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to right, rgba(8,20,20,0.92) 0%, rgba(8,20,20,0.55) 32%, transparent 58%)' }} />
 
-      <div className="relative z-10 flex flex-col h-full justify-start pt-[22vh] px-5 sm:pl-16 sm:pr-6">
+      {/* Interactive 3D product (confirmed Mission 2 model). Below the text on phones, on the right on larger screens. */}
+      <div className="relative order-2 h-[50svh] min-h-[340px] md:absolute md:inset-y-0 md:right-0 md:w-[58%] md:h-auto z-[5]">
+        <HeroProduct />
+      </div>
+
+      <div className="relative order-1 z-10 flex flex-col md:h-full justify-start pt-28 md:pt-[22vh] px-5 sm:pl-16 sm:pr-6 pointer-events-none [&>*]:pointer-events-auto">
         <motion.div {...rise(0.1, 14)} className="inline-flex items-center gap-2.5 w-fit rounded-full py-1.5 pl-1.5 pr-4 bg-white/[0.07] border border-white/15 backdrop-blur-md">
           <span className="grid place-items-center w-[22px] h-[22px] rounded-full bg-gold text-ink text-[11px] font-bold" aria-hidden="true">✦</span>
           <span className="text-[12.5px] text-white/75">Principles of Marketing · <strong className="text-white font-semibold">Venture Project</strong></span>
@@ -32,7 +38,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <a href="#concept" className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/60 no-underline text-[11px] tracking-[0.2em] uppercase" aria-label="Scroll to the concept">
+      <a href="#concept" className="hidden md:flex absolute bottom-8 left-16 z-10 flex-col items-center gap-2 text-white/60 no-underline text-[11px] tracking-[0.2em] uppercase" aria-label="Scroll to the concept">
         Scroll
         <motion.span animate={reduce ? undefined : { y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 1.8 }} className="block w-px h-8 bg-white/40" />
       </a>

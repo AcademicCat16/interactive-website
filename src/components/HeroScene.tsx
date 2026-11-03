@@ -34,7 +34,8 @@ function Pendant({ kind, y }: { kind: string; y: number }) {
   return <path d={`M0 ${y} C 9 ${y + 10}, 9 ${y + 22}, 0 ${y + 26} C -9 ${y + 22}, -9 ${y + 10}, 0 ${y} Z`} fill="url(#pearl)" stroke="#f6e3b8" strokeWidth="0.8" />
 }
 
-export default function HeroScene() {
+/** atmosphereOnly: keep the light, gems and sparkles but omit the drawn organizer (the real 3D model replaces it). */
+export default function HeroScene({ atmosphereOnly = false }: { atmosphereOnly?: boolean }) {
   return (
     <svg viewBox="0 0 800 720" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 w-full h-full" aria-hidden="true">
       <defs>
@@ -69,6 +70,7 @@ export default function HeroScene() {
       <Gem x={735} y={470} size={10} blur={2.5} rot={-12} cls="hs-float" />
       <Gem x={150} y={600} size={12} blur={3} rot={30} cls="hs-float-slow" />
 
+      {!atmosphereOnly && (<>
       {/* floating organizer */}
       <g className="hs-float" style={{ transformOrigin: '496px 380px' }}>
         <ellipse cx="496" cy="672" rx="230" ry="20" fill="#000" opacity="0.45" filter="url(#soft)" />
@@ -119,6 +121,7 @@ export default function HeroScene() {
         </g>
       </g>
 
+      </>)}
       {/* near gems */}
       <Gem x={150} y={250} size={20} rot={-15} cls="hs-float" />
       <Gem x={772} y={300} size={16} rot={22} cls="hs-float-slow" />
