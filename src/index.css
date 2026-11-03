@@ -44,3 +44,15 @@
   .btn-light { display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; border-radius: 999px; background: #fff8ee; color: #141210; font-weight: 600; font-size: 14px; text-decoration: none; }
   .btn-dark { display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; border-radius: 999px; background: rgba(10, 10, 10, 0.75); color: #fff8ee; font-weight: 600; font-size: 14px; text-decoration: none; border: 1px solid rgba(255, 255, 255, 0.18); backdrop-filter: blur(6px); }
 }
+
+/* ---------- hero scene animation ---------- */
+@keyframes hs-sway { 0%, 100% { transform: rotate(-3.5deg); } 50% { transform: rotate(3.5deg); } }
+@keyframes hs-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@keyframes hs-rise { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: 0.9; } 100% { transform: translateY(-140px); opacity: 0; } }
+@keyframes hs-pulse { 0%, 100% { opacity: 0.16; } 50% { opacity: 0.3; } }
+.hs-sway { transform-box: view-box; transform-origin: 0 0; animation: hs-sway 5.5s ease-in-out infinite; }
+.hs-float { transform-box: fill-box; animation: hs-float 7s ease-in-out infinite; }
+.hs-float-slow { transform-box: fill-box; animation: hs-float 11s ease-in-out infinite; }
+.hs-rise { transform-box: fill-box; animation: hs-rise 8s linear infinite; }
+.hs-pulse { animation: hs-pulse 6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .hs-sway, .hs-float, .hs-float-slow, .hs-rise, .hs-pulse { animation: none; } .hs-rise { opacity: 0.6; } }

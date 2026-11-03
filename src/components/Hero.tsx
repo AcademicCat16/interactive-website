@@ -1,15 +1,15 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { brand } from '../data/venture'
+import HeroScene from './HeroScene'
 
 export default function Hero() {
   const reduce = useReducedMotion()
   const rise = (delay: number, y = 16) => ({ initial: reduce ? false : { opacity: 0, y }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8, delay, ease: 'easeOut' as const } })
   return (
     <section id="top" className="relative w-full h-[100svh] min-h-[620px] overflow-hidden">
-      <video className="absolute inset-0 w-full h-full object-cover" src={`${import.meta.env.BASE_URL}hero.mp4`} autoPlay={!reduce} muted loop playsInline aria-hidden="true" />
-      <div className="absolute inset-0 bg-black/25" />
+      <div className="absolute inset-0 max-md:opacity-40 md:left-[18%]"><HeroScene /></div>
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 25%, transparent 55%, rgba(11,10,9,0.95) 100%)' }} />
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.1) 45%, transparent 70%)' }} />
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(8,20,20,0.92) 0%, rgba(8,20,20,0.55) 32%, transparent 58%)' }} />
 
       <div className="relative z-10 flex flex-col h-full justify-start pt-[22vh] px-5 sm:pl-16 sm:pr-6">
         <motion.div {...rise(0.1, 14)} className="inline-flex items-center gap-2.5 w-fit rounded-full py-1.5 pl-1.5 pr-4 bg-white/[0.07] border border-white/15 backdrop-blur-md">
